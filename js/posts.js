@@ -14,6 +14,9 @@ function displayPosts(postData) {
             // console.log(post)
 
             const div = document.createElement('div');
+
+            div.classList.add('post')
+
             div.innerHTML = `
             <h3>${post.title}</h3>
             <p>${post.body}</p>
