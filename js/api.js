@@ -77,3 +77,28 @@ function displayComments(comments) {
             console.log(comment.email)
       }
 }
+
+
+// another users practice
+function loadUsers() {
+      fetch('https://jsonplaceholder.typicode.com/users')
+            .then(response => response.json())
+            // .then(data => console.log(data))
+            .then(data => displayPracUser(data))
+}
+// loadUsers()
+
+function displayPracUser(data) {
+      console.log(data);
+
+      const ul = document.getElementById('user');
+      for (const user of data) {
+            console.log(user);
+
+            const li = document.createElement('li');
+            // li.innerText = user.email;
+            li.innerText = `Name: ${user.name}, E-mail: ${user.email}, UserName: ${user.username}. Address: ${user.address}`
+
+            ul.appendChild(li);
+      }
+}
